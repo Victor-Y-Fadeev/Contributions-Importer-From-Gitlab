@@ -15,7 +15,7 @@ class GitlabImporter(Importer):
                 or self.ignore_before_date < ignore_before_date
             else self.ignore_before_date)
 
-        last_commit = None
+        commits = []
         for gl in self.repos:
             email = gl.user.commit_email
             for project in gl.projects.list(iterator=True, membership=True,
@@ -30,15 +30,10 @@ class GitlabImporter(Importer):
                     if commit.author_email == email:
                         commit.committed_date = datetime.fromisoformat(
                             commit.committed_date).timestamp()
-                        if not last_commit:
-                            last_commit = commit
-                        elif last_commit.committed_date < commit.committed_date:
-                            yield last_commit
-                            last_commit = commit
-                        else:
-                            yield commit
-        if last_commit:
-            yield last_commit
+                        commits.append(commit)
+
+        commits.sort(key=lambda commit: commit.committed_date)
+        return commits
 
     def get_changes(self, commit, stats):
         ''' for a specific commit it gets all the changed files '''
