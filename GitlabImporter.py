@@ -18,7 +18,7 @@ class GitlabImporter(Importer):
         commits = []
         for gl in self.repos:
             email = gl.user.commit_email
-            for project in gl.projects.list(iterator=True, membership=True,
+            for project in gl.projects.list(iterator=True, min_access_level=30,
                     get_all=True, last_activity_after=last_date.isoformat()):
 
                 created_at = datetime.fromisoformat(
