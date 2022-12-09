@@ -24,6 +24,7 @@ def main():
     print(CI_SERVER_URL)
     print(CI_JOB_TOKEN)
     print(GITHUB_REPOSITORY_MOCK)
+    print(os.environ)
     quit()
 
     # repo = git.Repo.clone_from(url="https://github.com/Victor-Y-Fadeev/gitlab-contributions",

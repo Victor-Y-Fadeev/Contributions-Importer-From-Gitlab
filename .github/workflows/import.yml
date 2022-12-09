@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+env:
+  CI_JOB_TOKEN: ${{ secrets.CI_JOB_TOKEN }}
+
 jobs:
   import:
     runs-on: ubuntu-latest
