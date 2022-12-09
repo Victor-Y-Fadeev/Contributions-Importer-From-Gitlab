@@ -1,6 +1,7 @@
 name: Import GitLab Contributions
 
 on:
+  push:
   schedule:
     - cron: '0 0 * * *'
 
