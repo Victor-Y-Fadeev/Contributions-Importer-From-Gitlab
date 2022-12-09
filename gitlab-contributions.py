@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 
 import os
-import sys
 import git
 import gitlab
 from GitlabImporter import GitlabImporter
 
 
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-GITHUB_SERVER_URL = os.getenv('GITHUB_SERVER_URL')
-GITHUB_REPOSITORY_OWNER = os.getenv('GITHUB_REPOSITORY_OWNER')
-
 CI_SERVER_URL = os.getenv('CI_SERVER_URL')
 CI_JOB_TOKEN = os.getenv('CI_JOB_TOKEN')
 
+
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+GITHUB_SERVER_URL = os.getenv('GITHUB_SERVER_URL', 'https://github.com')
+GITHUB_SERVER_PROTOCOL = GITHUB_SERVER_URL[:GITHUB_SERVER_URL.find('://')]
+
+
+GITHUB_REPOSITORY_OWNER = os.getenv('GITHUB_REPOSITORY_OWNER')
 GITHUB_REPOSITORY_MOCK = os.getenv('GITHUB_REPOSITORY_MOCK', 'gitlab-contributions')
 
 
@@ -23,19 +25,17 @@ def main():
     print(GITHUB_SERVER_URL)
     print(GITHUB_REPOSITORY_OWNER)
     print(CI_SERVER_URL)
-    print(CI_JOB_TOKEN.split())
+    # print(CI_JOB_TOKEN.split())
     print(GITHUB_REPOSITORY_MOCK)
 
-    test = CI_JOB_TOKEN.split()
-    if test[0] == 'T' and test[1] == 'E' and test[2] == 'S' and test[3] == 'T':
-        sys.exit(1)
+    print(GITHUB_SERVER_PROTOCOL)
+
+
+    repo = git.Repo.clone_from(url='https://{}@github.com/Victor-Y-Fadeev/gitlab-contributions'.format(GITHUB_TOKEN),
+                               to_path='mock',
+                               multi_options=['--depth 1'])
+
     quit()
-
-    # repo = git.Repo.clone_from(url="https://github.com/Victor-Y-Fadeev/gitlab-contributions",
-    #                            to_path="mock",
-    #                            multi_options=["--depth 1"])
-
-    # quit()
 
     gl = gitlab.Gitlab(CI_SERVER_URL, private_token=CI_JOB_TOKEN)
     gl.auth()

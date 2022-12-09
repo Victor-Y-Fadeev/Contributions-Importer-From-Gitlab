@@ -6,6 +6,8 @@ on:
     - cron: '0 0 * * *'
 
 env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CI_SERVER_URL: ${{ secrets.CI_SERVER_URL }}
   CI_JOB_TOKEN: ${{ secrets.CI_JOB_TOKEN }}
 
 jobs:
