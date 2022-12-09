@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import os
+import sys
 import git
 import gitlab
 from GitlabImporter import GitlabImporter
@@ -22,9 +23,12 @@ def main():
     print(GITHUB_SERVER_URL)
     print(GITHUB_REPOSITORY_OWNER)
     print(CI_SERVER_URL)
-    print(CI_JOB_TOKEN)
+    print(CI_JOB_TOKEN.split())
     print(GITHUB_REPOSITORY_MOCK)
-    print(os.environ)
+
+    test = CI_JOB_TOKEN.split()
+    if test[0] == 'T' and test[1] == 'E' and test[2] == 'S' and test[3] == 'T':
+        sys.exit(1)
     quit()
 
     # repo = git.Repo.clone_from(url="https://github.com/Victor-Y-Fadeev/gitlab-contributions",
