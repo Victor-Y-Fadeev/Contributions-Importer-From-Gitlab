@@ -10,6 +10,8 @@ env:
   CI_SERVER_URL: ${{ secrets.CI_SERVER_URL }}
   CI_JOB_TOKEN: ${{ secrets.CI_JOB_TOKEN }}
 
+permissions: read-all
+
 jobs:
   import:
     runs-on: ubuntu-latest
