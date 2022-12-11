@@ -28,15 +28,13 @@ GITHUB_REPOSITORY_NAME = '{}/{}/{}'.format(GITHUB_SERVER_URL,
 def main():
     repo = git.Repo.clone_from(url=GITHUB_REPOSITORY_NAME, to_path='mock',
                                multi_options=['--depth 1'])
-
-
-    # quit()
+    repo.config_writer().set_value('user', 'name',
+                                   GITHUB_USER_NAME).release()
+    repo.config_writer().set_value('user', 'email',
+                                   GITHUB_USER_EMAIL).release()
 
     gl = gitlab.Gitlab(GITLAB_SERVER_URL, private_token=GITLAB_TOKEN)
     gl.auth()
-
-
-    # mock_repo = git.Repo('mock')
 
     importer = GitlabImporter([gl], repo)
     importer.set_max_commits_per_day([20, 20])
