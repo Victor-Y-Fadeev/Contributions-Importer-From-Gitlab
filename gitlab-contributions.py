@@ -3,6 +3,7 @@
 import os
 import git
 import gitlab
+from github import Github
 from GitlabImporter import GitlabImporter
 
 
@@ -21,6 +22,11 @@ GITHUB_REPOSITORY_MOCK = os.getenv('GITHUB_REPOSITORY_MOCK', 'gitlab-contributio
 
 def main():
 
+    g = Github(GITHUB_TOKEN)
+    print(g.get_user().name)
+    print(next(email.email for email in g.get_user().get_emails() if email.primary))
+    # quit()
+
     print(GITHUB_TOKEN)
     print(GITHUB_SERVER_URL)
     print(GITHUB_REPOSITORY_OWNER)
@@ -31,7 +37,7 @@ def main():
     print(GITHUB_SERVER_PROTOCOL)
 
 
-    repo = git.Repo.clone_from(url='https://{}@github.com/Victor-Y-Fadeev/gitlab-contributions'.format(GITHUB_TOKEN),
+    repo = git.Repo.clone_from(url='https://{}:{}@github.com/Victor-Y-Fadeev/gitlab-contributions'.format(GITHUB_REPOSITORY_OWNER, GITHUB_TOKEN),
                                to_path='mock',
                                multi_options=['--depth 1'])
 
