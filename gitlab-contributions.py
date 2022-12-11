@@ -30,15 +30,15 @@ def main():
                                multi_options=['--depth 1'])
 
 
-    quit()
+    # quit()
 
-    gl = gitlab.Gitlab(CI_SERVER_URL, private_token=CI_JOB_TOKEN)
+    gl = gitlab.Gitlab(GITLAB_SERVER_URL, private_token=GITLAB_TOKEN)
     gl.auth()
 
 
-    mock_repo = git.Repo("D:/Desktop/Contributions-Importer-From-Gitlab/mock")
+    # mock_repo = git.Repo('mock')
 
-    importer = GitlabImporter([gl], mock_repo)
+    importer = GitlabImporter([gl], repo)
     importer.set_max_commits_per_day([20, 20])
     importer.set_start_from_last(True)
     importer.import_repository()
