@@ -9,6 +9,7 @@ env:
   GITLAB_SERVER_URL: ${{ secrets.GITLAB_SERVER_URL }}
   GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  GITHUB_REPOSITORY_NAME: ${{ secrets.REPOSITORY_NAME }}
 
 jobs:
   import:

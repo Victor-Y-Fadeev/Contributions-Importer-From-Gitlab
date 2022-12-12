@@ -26,8 +26,9 @@ GITHUB_REPOSITORY_NAME = '{}/{}/{}'.format(GITHUB_SERVER_URL,
 
 
 def main():
-    repo = Repo.clone_from(url=GITHUB_REPOSITORY_NAME, to_path='mock',
-                           multi_options=['--depth 1'])
+    repo = Repo('mock') if os.path.isdir('mock') else Repo.clone_from(
+                url=GITHUB_REPOSITORY_NAME, to_path='mock',
+                multi_options=['--depth 1'])
     repo.config_writer().set_value('user', 'name',
                                    GITHUB_USER_NAME).release()
     repo.config_writer().set_value('user', 'email',
@@ -42,9 +43,6 @@ def main():
     importer.set_max_commits_per_day([20, 20])
     importer.set_start_from_last(True)
     importer.import_repository()
-
-    repo.close()
-    rmtree('mock')
 
 if __name__ == '__main__':
     main()
