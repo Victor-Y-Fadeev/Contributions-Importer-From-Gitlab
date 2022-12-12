@@ -17,12 +17,12 @@ GITHUB_USER_EMAIL = next(email.email for email
                          in Github(GITHUB_TOKEN).get_user().get_emails()
                          if email.primary)
 
-GITHUB_SERVER_URL = os.getenv('GITHUB_SERVER_URL', 'https://github.com'
-                             ).replace('://', '://{}@').format(GITHUB_TOKEN)
-GITHUB_REPOSITORY_NAME = '{}/{}/{}'.format(GITHUB_SERVER_URL,
-                                           GITHUB_USER_LOGIN,
-                                           os.getenv('GITHUB_REPOSITORY_NAME',
-                                                     'gitlab-contributions'))
+GITHUB_SERVER_URL = os.getenv('GITHUB_SERVER_URL', 'https://github.com')
+GITHUB_REPOSITORY_NAME = os.getenv('GITHUB_REPOSITORY_NAME')
+GITHUB_REPOSITORY_URL = '{}/{}/{}'.format(GITHUB_SERVER_URL
+                        .replace('://', '://{}@').format(GITHUB_TOKEN),
+                        GITHUB_USER_LOGIN, GITHUB_REPOSITORY_NAME
+                        if GITHUB_REPOSITORY_NAME else 'gitlab-contributions')
 
 
 def main():
