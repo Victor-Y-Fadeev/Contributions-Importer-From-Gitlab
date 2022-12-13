@@ -44,5 +44,7 @@ def main():
     importer.set_start_from_last(True)
     importer.import_repository()
 
+    repo.remote('origin').push()
+
 if __name__ == '__main__':
     main()
