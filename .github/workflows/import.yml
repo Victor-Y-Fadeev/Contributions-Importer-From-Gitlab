@@ -1,4 +1,5 @@
-name: Import GitLab Contributions
+name: GitLab Contributions
+run-name: Synchronize Contributions
 
 on:
   push:
@@ -13,14 +14,19 @@ env:
 
 jobs:
   import:
+    name: Import Contributions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
         with:
           submodules: 'true'
-      - uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
           cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
-      - run: python gitlab-contributions.py
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+      - name: Import Contributions
+        run: python gitlab-contributions.py
