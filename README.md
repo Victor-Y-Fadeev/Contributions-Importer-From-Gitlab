@@ -13,8 +13,7 @@
 # How to Use
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/23136222/207916253-d20c6906-ef07-40a1-bfba-bf7497cb3566.png#gh-light-mode-only" width="480" align="left">
-  <img src="https://user-images.githubusercontent.com/23136222/207925909-ba47fdac-c46c-4376-9834-eeb786807ac4.png#gh-dark-mode-only" width="480" align="left">
-  <img src="https://user-images.githubusercontent.com/23136222/207925918-028ebec9-913f-4de0-afca-c65aa12a587f.png#gh-light-mode-only" width="480" align="right">
-  <img src="https://user-images.githubusercontent.com/23136222/207952033-de5aa86b-a5be-48aa-9cf8-95398e2f5001.png#gh-dark-mode-only" width="480" align="right">
+
+  ![alpha_light_token](https://user-images.githubusercontent.com/23136222/207954561-f9248126-6368-45e7-9de4-6972d0edabdd.png#gh-light-mode-only)
+  ![alpha_dark_token](https://user-images.githubusercontent.com/23136222/207954536-61f87dce-9c5a-4633-a49a-dd49ae5aac53.png#gh-dark-mode-only)
 </p>
