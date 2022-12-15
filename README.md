@@ -9,3 +9,12 @@
   ![2022_alpha_light_github](https://user-images.githubusercontent.com/23136222/207667695-8ae40bef-4af9-469e-908f-26892b15ae7c.png#gh-light-mode-only)
   ![2022_alpha_dark_github](https://user-images.githubusercontent.com/23136222/207667690-b853ccd7-8ab6-4000-8f69-cfc0f0faa585.png#gh-dark-mode-only)
 </h3>
+
+# How to Use
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/23136222/207916253-d20c6906-ef07-40a1-bfba-bf7497cb3566.png#gh-light-mode-only" width="480" align="left">
+  <img src="https://user-images.githubusercontent.com/23136222/207925909-ba47fdac-c46c-4376-9834-eeb786807ac4.png#gh-dark-mode-only" width="480" align="left">
+  <img src="https://user-images.githubusercontent.com/23136222/207925918-028ebec9-913f-4de0-afca-c65aa12a587f.png#gh-light-mode-only" width="480" align="right">
+  <img src="https://user-images.githubusercontent.com/23136222/207925916-14e2905b-47b0-4b8b-90a2-0197a1a642ef.png#gh-dark-mode-only" width="480" align="right">
+</p>
