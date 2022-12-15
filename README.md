@@ -17,3 +17,9 @@
   ![alpha_light_token](https://user-images.githubusercontent.com/23136222/207954561-f9248126-6368-45e7-9de4-6972d0edabdd.png#gh-light-mode-only)
   ![alpha_dark_token](https://user-images.githubusercontent.com/23136222/207954536-61f87dce-9c5a-4633-a49a-dd49ae5aac53.png#gh-dark-mode-only)
 </p>
+
+<p align="center">
+
+  ![alpha_light_secrets](https://user-images.githubusercontent.com/23136222/207987066-d25e9051-3161-4d93-938c-5e9c1eab7aea.png#gh-light-mode-only)
+  ![alpha_dark_secrets](https://user-images.githubusercontent.com/23136222/207987065-8f0aacc4-3fea-416f-8abc-124d6b7d8c8b.png#gh-dark-mode-only)
+</p>
