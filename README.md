@@ -13,9 +13,9 @@
 # How to Use
 
 <p align="center">
-
-  ![alpha_light_token](https://user-images.githubusercontent.com/23136222/207954561-f9248126-6368-45e7-9de4-6972d0edabdd.png#gh-light-mode-only)
-  ![alpha_dark_token](https://user-images.githubusercontent.com/23136222/207954536-61f87dce-9c5a-4633-a49a-dd49ae5aac53.png#gh-dark-mode-only)
+  
+  ![alpha_light_token](https://user-images.githubusercontent.com/23136222/208074919-f9c9bc7d-db0a-4cad-a3e2-0b34e8898682.png#gh-light-mode-only)
+  ![alpha_dark_token](https://user-images.githubusercontent.com/23136222/208074913-443edec5-7546-4a24-9759-c5aed279f9c1.png#gh-dark-mode-only)
 </p>
 
 <p align="center">
