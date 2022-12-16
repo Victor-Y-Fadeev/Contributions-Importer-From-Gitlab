@@ -1,6 +1,6 @@
 # Contributions Importer from GitLab
 
-This tool is based on Miro Mannino's [Contributions Importer for GitHub](https://github.com/miromannino/contributions-importer-for-github) to help users import contributions continuously via GitLab API.
+This tool is based on Miro Mannino's [Contributions Importer for GitHub](https://github.com/miromannino/contributions-importer-for-github) to help users import contributions continuously via GitLab API without cloning.
 
 <h3 align="center">
 
@@ -17,6 +17,11 @@ This tool is based on Miro Mannino's [Contributions Importer for GitHub](https:/
 Login to GitHub with your personal access token to get your username, primary email and clone the mock repository. Read the last mock commit date to count from. After that, authorize with a personal access token for each GitLab server to get a list of projects with developer permissions changed since our date via the API. Requests all user commits since our date for each project and sort them by date for backwards compatibility. Then parse each commit to get a list of changed file types with insertion and deletion counts. At the end, this data is sent to the original importer to create new mock commits. All changes are pushed to GitHub before exit.
 
 # How to Use
+
+First of all, you need to create a personal access token for GitHub.
+Go to `Settings` -> `Developer settings` -> `Personal access tokens` -> `Tokens (classic)` -> `Generate new token (classic)`, or just use [the direct link](https://github.com/settings/tokens/new). You need to give access to `user:email` and `repo` for full control of private mock repository. Don't set an expiration date, if you won't to update the token.
+
+Similarly create personal access tokens for each your GitLab servers. Go to `Preferences` -> `Access Tokens`. Give `read_api` access.
 
 <p align="center">
   
