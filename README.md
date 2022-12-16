@@ -42,9 +42,9 @@ Create a mock repository named `gitlab-contributions` in your account.
 Strongly recommended to use a private repository.
 Then fork [this](https://github.com/Victor-Y-Fadeev/Contributions-Importer-From-Gitlab) repository and set up [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 Go to repository `Settings` -> `Security` -> `Secrets` -> `Actions` -> `New repository secret`:
-- `ACCESS_TOKEN` - your Github personal access token
-- `GITLAB_SERVER_URL` - line-separated list of your GitLab servers, including protocol and port
-- `GITLAB_TOKEN`- line-separated list of your GitLab API access tokens
+- `ACCESS_TOKEN` &ndash; your Github personal access token
+- `GITLAB_SERVER_URL` &ndash; line-separated list of your GitLab servers, including protocol and port
+- `GITLAB_TOKEN` &ndash; line-separated list of your GitLab API access tokens
 
 <p align="center">
 
