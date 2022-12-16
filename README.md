@@ -40,7 +40,7 @@ Go to `Preferences` -> `Access Tokens`. Give `read_api` access.
 
 Create a mock repository named `gitlab-contributions` in your account.
 Strongly recommended to use a private repository.
-Then fork [this](https://github.com/Victor-Y-Fadeev/Contributions-Importer-From-Gitlab) repository and set [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
+Then fork [this](https://github.com/Victor-Y-Fadeev/Contributions-Importer-From-Gitlab) repository and set up [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
 Go to repository `Settings` -> `Security` -> `Secrets` -> `Actions` -> `New repository secret`:
 - `ACCESS_TOKEN` - your Github personal access token
 - `GITLAB_SERVER_URL` - line-separated list of your GitLab servers, including protocol and port
@@ -52,5 +52,6 @@ Go to repository `Settings` -> `Security` -> `Secrets` -> `Actions` -> `New repo
   ![alpha_dark_secrets](https://user-images.githubusercontent.com/23136222/207987065-8f0aacc4-3fea-416f-8abc-124d6b7d8c8b.png#gh-dark-mode-only)
 </p>
 
-**P.s.** You can override the default mock repository name by setting the `REPOSITORY_NAME` secret.<br>
-**P.p.s.** You should set up all your GitLab servers at once to prevent your old commits missing!
+**P.s.** The synchronization task will be automatically scheduled at **00:00 UTC**.<br>
+**P.p.s.** You should set up all your GitLab servers at once to prevent your old commits missing!<br>
+**P.p.p.s.** You can override the default mock repository name by setting the `REPOSITORY_NAME` secret.
