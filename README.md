@@ -1,6 +1,6 @@
 # Contributions Importer from GitLab
 
-This tool is based on Miro Mannino's [Contributions Importer for GitHub](https://github.com/miromannino/contributions-importer-for-github) to help users import contributions continuously via GitLab API without cloning.
+This tool based on Miro Mannino's [Contributions Importer for GitHub](https://github.com/miromannino/contributions-importer-for-github) and helps users to import contributions continuously via GitLab API without cloning.
 
 <h3 align="center">
 
