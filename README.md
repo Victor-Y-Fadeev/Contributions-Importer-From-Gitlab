@@ -14,14 +14,23 @@ This tool based on Miro Mannino's [Contributions Importer for GitHub](https://gi
 
 # How it Works
 
-Login to GitHub with your personal access token to get your username, primary email and clone the mock repository. Read the last mock commit date to count from. After that, authorize with a personal access token for each GitLab server to get a list of projects with developer permissions changed since our date via the API. Requests all user commits since our date for each project and sort them by date for backwards compatibility. Then parse each commit to get a list of changed file types with insertion and deletion counts. At the end, this data is sent to the original importer to create new mock commits. All changes are pushed to GitHub before exit.
+Login to GitHub with your personal access token to get your username, primary email and clone the mock repository.
+Read the last mock commit date to count from.
+After that, authorize with a personal access token for each GitLab server to get a list of projects with developer permissions changed since our date via the API.
+Requests all user commits since our date for each project and sort them by date for backwards compatibility.
+Then parse each commit to get a list of changed file types with insertion and deletion counts.
+At the end, this data is sent to the original importer to create new mock commits.
+All changes are pushed to GitHub before exit.
 
 # How to Use
 
 First of all, you need to create a personal access token for GitHub.
-Go to `Settings` -> `Developer settings` -> `Personal access tokens` -> `Tokens (classic)` -> `Generate new token (classic)`, or just use [the direct link](https://github.com/settings/tokens/new). You need to give access to `user:email` and `repo` for full control of private mock repository. Don't set an expiration date, if you won't to update the token.
+Go to `Settings` -> `Developer settings` -> `Personal access tokens` -> `Tokens (classic)` -> `Generate new token (classic)`, or just use [the direct link](https://github.com/settings/tokens/new).
+You need to give access to `user:email` and `repo` for full control of private mock repository.
+Don't set an expiration date, if you won't to update the token.
 
-Similarly create personal access tokens for each your GitLab servers. Go to `Preferences` -> `Access Tokens`. Give `read_api` access.
+Similarly create personal access tokens for each your GitLab servers.
+Go to `Preferences` -> `Access Tokens`. Give `read_api` access.
 
 <p align="center">
   
@@ -29,8 +38,19 @@ Similarly create personal access tokens for each your GitLab servers. Go to `Pre
   ![alpha_dark_token](https://user-images.githubusercontent.com/23136222/208074913-443edec5-7546-4a24-9759-c5aed279f9c1.png#gh-dark-mode-only)
 </p>
 
+Create a mock repository named `gitlab-contributions` in your account.
+Strongly recommended to use a private repository.
+Then fork [this](https://github.com/Victor-Y-Fadeev/Contributions-Importer-From-Gitlab) repository and set [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets).
+Go to repository `Settings` -> `Security` -> `Secrets` -> `Actions` -> `New repository secret`:
+- `ACCESS_TOKEN` - your Github personal access token
+- `GITLAB_SERVER_URL` - line-separated list of your GitLab servers, including protocol and port
+- `GITLAB_TOKEN`- line-separated list of your GitLab API access tokens
+
 <p align="center">
 
   ![alpha_light_secrets](https://user-images.githubusercontent.com/23136222/207987066-d25e9051-3161-4d93-938c-5e9c1eab7aea.png#gh-light-mode-only)
   ![alpha_dark_secrets](https://user-images.githubusercontent.com/23136222/207987065-8f0aacc4-3fea-416f-8abc-124d6b7d8c8b.png#gh-dark-mode-only)
 </p>
+
+**P.s.** You can override the default mock repository name by setting the `REPOSITORY_NAME` secret.<br>
+**P.p.s.** You should set up all your GitLab servers at once to prevent your old commits missing!
