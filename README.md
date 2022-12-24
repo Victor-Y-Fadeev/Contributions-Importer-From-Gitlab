@@ -52,6 +52,16 @@ Go to repository `Settings` -> `Security` -> `Secrets` -> `Actions` -> `New repo
   ![alpha_dark_secrets](https://user-images.githubusercontent.com/23136222/207987065-8f0aacc4-3fea-416f-8abc-124d6b7d8c8b.png#gh-dark-mode-only)
 </p>
 
-**P.s.** The synchronization task will be automatically scheduled at **00:00 UTC**.<br>
-**P.p.s.** You should set up all your GitLab servers at once to prevent your old commits missing!<br>
-**P.p.p.s.** You can override the default mock repository name by setting the `REPOSITORY_NAME` secret.
+The final step is to enable the [GitHub Actions](https://github.com/features/actions) workflow.
+Go to `Actions` tab and click `I understand my workflows, go ahead and enable them`.
+Select the `GitLab Contributions` workflow and enable it.
+The synchronization task will be automatically scheduled at **00:00 UTC**.
+
+<p align="center">
+
+  ![alpha_light_workflow](https://user-images.githubusercontent.com/23136222/209452369-f3874c65-e479-496b-bda8-5657abece53e.png#gh-light-mode-only)
+  ![alpha_dark_workflow](https://user-images.githubusercontent.com/23136222/209452320-c0c696ea-d0ac-4a7b-9f82-794d8e36ed17.png#gh-dark-mode-only)
+</p>
+
+**P.s.** You should set up all your GitLab servers at once to prevent your old commits missing!<br>
+**P.p.s.** You can override the default mock repository name by setting the `REPOSITORY_NAME` secret.
